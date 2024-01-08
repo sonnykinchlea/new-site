@@ -66,6 +66,6 @@ operator_btns.forEach((btn) => {
 
 const remove_active = () => {
   operator_btns.forEach((btn) => {
-    brn.classList.remove("active");
+    btn.classList.remove("active");
   });
 };
