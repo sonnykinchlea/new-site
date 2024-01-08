@@ -69,3 +69,26 @@ const remove_active = () => {
     btn.classList.remove("active");
   });
 };
+
+const operatorMap = {
+  "+": "plus",
+  "-": "minus",
+  "*": "multiply",
+  "/": "divide",
+  "=": "equals",
+  ".": "decimal",
+};
+let pressed = 0;
+
+addEventListener("keypress", (event) => {
+  if (event.key >= 0 && event.key <= 9) {
+    pressed
+      ? (document.getElementById("output").value += event.key)
+      : (document.getElementById("output").value = event.key);
+    pressed++;
+  }
+
+  if (operatorMap[event.key]) {
+    document.getElementById(operatorMap[event.key]).click();
+  }
+});
